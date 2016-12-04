@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<nodes info="Example_nodes">
+
+	<available_components av_package="dev.example" />
+
+	<node id="mainContext" class="dev.example.main.MainContext">
+		<var_context name="OutputContext" id_node="outputContext" />
+		<property name="name" value="serg" />
+		<property name="height" value="188" />
+	</node>
+
+	<node id="outputContext" class="dev.example.common.maintenance.OutputDescriptorV1" />
+
+</nodes>

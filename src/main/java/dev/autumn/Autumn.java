@@ -7,6 +7,7 @@ import dev.autumn.parser.AutumnXmlParser;
 import dev.autumn.annotaion.AnnotationHandler;
 import dev.autumn.annotaion.Component;
 import dev.autumn.annotaion.handlers.AutoInjectHandler;
+import dev.autumn.annotaion.handlers.AutoWiredHandler;
 import dev.autumn.annotaion.handlers.OutputContextHandler;
 import dev.autumn.annotaion.handlers.ValueHandler;
 import dev.autumn.finder.ClassFinder;
@@ -42,7 +43,7 @@ public class Autumn {
 		handlers = new ArrayList<AnnotationHandler>();
 		handlers.add(new ValueHandler());
 		handlers.add(new OutputContextHandler(nodes));
-		
+		handlers.add(new AutoWiredHandler(nodes));
 		
 		//handlers.add(new AutoInjectHandler());		
 	}
@@ -76,17 +77,5 @@ public class Autumn {
 				((MainContext)o).hey();
 			}
 		}
-		
-		
-		/*for(Class<?> c : autumn.nodes.values()) {
-			
-			if(c == MainContext.class) {
-				System.out.println("MainContext.class");
-				MainContext m = (MainContext)c.newInstance();
-				m.hey();
-			}
-		}*/
-		
 	}
-	
 }

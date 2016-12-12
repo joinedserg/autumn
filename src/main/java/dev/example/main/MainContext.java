@@ -8,7 +8,8 @@ import dev.example.common.maintenance.*;
 @Component
 public class MainContext {
 
-	@OutputContext
+	//@OutputContext
+	@Autowired
 	OutputDescriptor outputHandler;
 	
 	@Value("${name}")

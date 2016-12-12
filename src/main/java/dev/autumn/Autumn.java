@@ -19,6 +19,7 @@ public class Autumn {
 	Map<String, Class<?>> nodes;
 	List<AnnotationHandler> handlers;
 	
+	//TODO: change it, remove readin conf from constructor
 	public Autumn(String xmlPath) throws Exception {
 		xmlParser = new AutumnXmlParser();
 		xmlParser.parseSettings(xmlPath);
@@ -69,13 +70,18 @@ public class Autumn {
 		
 		Autumn autumn = new Autumn("/home/serg/workspace_spr/AutumnProject/target/classes/example_nodes.xml");
 		
-		for(String name : autumn.nodes.keySet()) {
+		MainContext m = (MainContext)autumn.getNode("mainContext");
+		m.hey();
+		
+		
+		
+		/*for(String name : autumn.nodes.keySet()) {
 			System.out.println(name);
 			
 			Object o = autumn.getNode(name);
 			if(o.getClass() == MainContext.class) {
 				((MainContext)o).hey();
 			}
-		}
+		}*/
 	}
 }

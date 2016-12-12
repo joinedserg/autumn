@@ -25,11 +25,14 @@ public class AutoWiredHandler implements AnnotationHandler {
 			Autowired a = (Autowired)f.getAnnotation(Autowired.class);
 			if(a != null) {
 				Class autowired = null;
-				String cont = res.getVarContext(OutputContext.class.getSimpleName());
+				String cont = res.getVarContext(Autowired.class.getSimpleName());
 				if(cont != null) {
 					autowired = nodes.get(cont);
 				}
-				else if(a.value().equals("auto")) {
+				else if(!a.value().equals("auto")) {
+					autowired = nodes.get(a.value());
+				}
+				else {
 					autowired = null;
 
 					for(Class cand : nodes.values()) {
@@ -38,10 +41,6 @@ public class AutoWiredHandler implements AnnotationHandler {
 							break;
 						}
 					}
-
-				}
-				else {
-					autowired = nodes.get(a.value());
 				}
 
 				f.setAccessible(true);

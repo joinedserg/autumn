@@ -5,25 +5,21 @@
 	<artifactId>AutumnProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<dependensies>
 
-		<!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+	<dependencies>
 		<dependency>
 			<groupId>xml-apis</groupId>
 			<artifactId>xml-apis</artifactId>
 			<version>2.0.2</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
-
-	</dependensies>
-
+		
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -43,16 +39,16 @@
 						<goals>
 							<goal>shade</goal>
 						</goals>
-						<!-- configuration>
+						<configuration>
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>dev.autumn.parser.AutumnXmlParser</mainClass>
+									<mainClass>dev.autumn.Autumn</mainClass>
 								</transformer>
 							</transformers>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<shadedClassifierName>executable</shadedClassifierName>
-						</configuration-->
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

@@ -9,7 +9,7 @@ import dev.example.common.maintenance.*;
 public class MainContext {
 
 	//@OutputContext
-	@Autowired
+	@Autowired("OutputDescriptorV1")
 	OutputDescriptor outputHandler;
 	
 	@Value("${name}")
